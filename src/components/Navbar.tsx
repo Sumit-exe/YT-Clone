@@ -5,8 +5,7 @@ import {BsYoutube , BsCameraVideo , BsBell} from 'react-icons/bs'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {IoAppsSharp} from 'react-icons/io5'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useAppDispatch } from '../store/hooks'
-import { useSelector } from 'react-redux'
+import { useAppDispatch, useAppSelector } from '../store/hooks'
 import { changeSearchTerm, clearSearchTerm, clearVideos } from '../store'
 import { getSearchPageVideos } from '../store/reducers/getSearchPageVideos'
 
@@ -16,7 +15,8 @@ export default function Navbar() {
     const navigate = useNavigate();
     const location = useLocation();
     const dispatch = useAppDispatch();
-    const searchTerm = useSelector((state)=> state.youtubeApp.searchTerm)
+    const searchTerm = useAppSelector((state)=> state.youtubeApp.searchTerm);
+    console.log('st : ', searchTerm)
     
     const handleSearch = ()=>{
         if(location.pathname!=='/search') navigate('/search');
