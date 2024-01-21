@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 
 export default function SearchCard({ data }: { data: HomePageVideos }) {
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 mb-5 max-md:flex-col">
       <div className="relative">
-        <span className="absolute bottom-3 right-3 text-sm bg-gray-900 px-2 py-0.5 z-10">
+        <span className="absolute bottom-3 right-3 text-sm bg-gray-900 px-2 py-0.5 z-10 ">
           {data.videoDuration}
         </span>
         <Link to={`/watch/${data.videoId}`}>
@@ -17,7 +17,7 @@ export default function SearchCard({ data }: { data: HomePageVideos }) {
           />
         </Link>
       </div>
-      <div className="flex gap-1 flex-col">
+      <div className="flex gap-1 flex-col ">
         <h3 className="max-w-2xl">
           <a href="#" className="line-clamp-2">
             {data.videoTitle}
@@ -43,7 +43,7 @@ export default function SearchCard({ data }: { data: HomePageVideos }) {
             <span>{data.channelInfo.name}</span>
           </a>
         </div>
-        <div className="max-w-2xl line-clamp-2 text-sm text-gray-400">
+        <div className="max-w-2xl line-clamp-2 text-sm text-gray-400 max-md:hidden">
           <p>{data.videoDescription}</p>
         </div>
       </div>

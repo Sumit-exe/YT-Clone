@@ -45,7 +45,8 @@ export default function Watch() {
             <Navbar />
           </div>
           <div className="flex w-full" style={{ height: "92.5vh" }}>
-            <div className="flex gap-y-10 gap-x-5 p-7 mx-20 mr-0 w-full overflow-auto">
+            <div className="flex gap-y-10 gap-x-5 p-7 mx-20 mr-0 w-full overflow-auto max-xl:flex-col max-lg:mx-2 max-lg:p-3 ">
+
               <div style={{ maxWidth: "800px" }}>
                 <div>
                   <iframe
@@ -56,9 +57,10 @@ export default function Watch() {
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    className="max-lg:w-full max-md:max-h-[23rem] max-sm:max-h-[15rem] "
                   ></iframe>
                   <div className="mt-5">
-                    <p className="text-xl">{currentPlaying.videoTitle}</p>
+                    <p className="text-xl max-md:text-base">{currentPlaying.videoTitle}</p>
                     <div className="flex justify-between mt-1">
                       <div className="text-sm text-gray-400">
                         <span className="after:content-['•'] after:mx-1">
@@ -68,23 +70,23 @@ export default function Watch() {
                       </div>
                       <div className="flex items-center gap-4 uppercase">
                         <div className="flex items-center gap-1 cursor-pointer">
-                          <BiLike className="text-xl" />
+                          <BiLike className="text-xl max-md:text-sm" />
                           <strong>{currentPlaying.videoLikes}</strong>
                         </div>
                         <div className="flex items-center gap-1 cursor-pointer">
-                          <BiDislike className="text-xl" />
+                          <BiDislike className="text-xl max-md:text-sm" />
                           <strong>dislike</strong>
                         </div>
                         <div className="flex items-center gap-1 cursor-pointer">
-                          <FaShare className="text-xl" />
+                          <FaShare className="text-xl max-md:text-sm" />
                           <strong>share</strong>
                         </div>
                         <div className="flex items-center gap-1 cursor-pointer">
-                          <HiScissors className="text-xl" />
+                          <HiScissors className="text-xl max-md:text-sm" />
                           <strong>clip</strong>
                         </div>
                         <div className="flex items-center gap-1 cursor-pointer">
-                          <MdOutlinePlaylistAdd className="text-xl" />
+                          <MdOutlinePlaylistAdd className="text-xl max-md:text-base" />
                           <strong>save</strong>
                         </div>
                         <div className="flex items-center gap-1 cursor-pointer">
@@ -141,7 +143,8 @@ export default function Watch() {
                   </div>
                 </div>
               </div>
-              <div className="mr-24 flex flex-col gap-3">
+
+              <div className="mr-24 flex flex-col gap-3 max-lg:mr-3">
                 {getRecommendedVideos.length &&
                   recommendedVideos.map((item) => {
                     return <WatchCard data={item} key={item.videoId} />;

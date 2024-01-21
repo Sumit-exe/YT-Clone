@@ -27,15 +27,15 @@ export default function Navbar() {
     }
 
   return (
-    <div className='flex justify-between items-center px-14 h-14 bg-[#212121] opacity-95 sticky z-50'>
-        <div className="flex gap-8 items-center text-2xl">
-            <div>
+    <div className='flex justify-between items-center px-14 max-md:px-5 gap-3 max-md:px-6 h-14 bg-[#212121] opacity-95 sticky z-50'>
+        <div className="flex gap-8 items-center text-2xl ">
+            <div className='max-xl:hidden'>
                 <GiHamburgerMenu/>
             </div>
             <Link to='/'>
                 <div className="flex gap-1 items-center justify-center">
                     <BsYoutube className="text-3xl text-red-600"/>
-                    <span className='text-2xl font-medium'>YouTube</span>
+                    <span className='text-2xl font-medium max-md:hidden'>YouTube</span>
                 </div>
             </Link>
         </div>
@@ -44,6 +44,7 @@ export default function Navbar() {
                 e.preventDefault();
                 handleSearch();
             }}>
+
                 <div className="flex bg-zinc-900 h-10 items-center px-4 pr-0">
                     <div className="flex gap-5 items-center pr-5">
                         <div>
@@ -51,26 +52,27 @@ export default function Navbar() {
                         </div>
                         <input 
                         type="text"  
-                        className='w-96 bg-zinc-900 focus:outline-none border-none'
+                        className='w-96 bg-zinc-900 focus:outline-none border-none max-xl:max-w-32'
                         value={searchTerm}
                         onChange={e=>dispatch(changeSearchTerm(e.target.value))}
                         />
                         
                         <AiOutlineClose  
-                        className={`text-xl cursor-pointer ${!searchTerm ? 'invisible' : 'visible'}`}
+                        className={`text-xl  cursor-pointer ${!searchTerm ? 'invisible' : 'visible'}`}
                         onClick={()=>dispatch(clearSearchTerm())}
                         />
                     </div>
-                    <button  className="h-10 w-16 flex justify-center items-center bg-zinc-800">
+                    <button  className="h-10 w-16 flex justify-center items-center bg-zinc-800 max-md:w-10">
                         <AiOutlineSearch className="text-xl"/>
                     </button>
                 </div>
+
             </form>
-            <div className='text-xl p-3 bg-zinc-900 rounded-full'>
+            <div className='text-xl p-3 bg-zinc-900 rounded-full max-lg:hidden'>
                 <TiMicrophone/>
             </div>
         </div>
-        <div className='flex gap-5 items-center text-xl'>
+        <div className='flex gap-5 items-center text-xl max-xl:hidden'>
             <BsCameraVideo />
             <IoAppsSharp />
             <div className="relative">

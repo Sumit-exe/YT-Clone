@@ -117,8 +117,9 @@ export default function SideBar() {
           "Test new features",
         ],
       ];
+
   return (
-    <div className='w-2/12 bg-[#212121] pr-5 overflow-auto pb-8 sidebar'>
+    <div className='w-2/12 bg-[#212121] pr-5 overflow-auto pb-8 sidebar max-xl:hidden '>
       <ul className="flex flex-col border-b-2 border-gray-700">
         {mainLinks.map(({icon,name})=>(
             <li

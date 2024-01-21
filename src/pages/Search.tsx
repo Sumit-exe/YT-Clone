@@ -29,10 +29,10 @@ export default function Search() {
       <div style={{ height: "7.5vh" }}>
         <Navbar />
       </div>
-      <div className="flex" style={{ height: "92.5vh" }}>
+      <div className="flex" style={{ height: "calc(100% - 7.5vh)" }}>
         <SideBar />
         {videos.length ? (
-          <div className="py-8 pl-8 flex flex-col gap-5 w-full">
+          <div className="py-8 pl-8 flex flex-col gap-5 w-full max-md:px-2 max-md:py-4">
             <InfiniteScroll
               dataLength={videos.length}
               next={() => dispatch(getSearchPageVideos(true))}
